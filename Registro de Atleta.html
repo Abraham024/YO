@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Atleta - UIA Sport GYM</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    .registro-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    }
+
+    .registro-container img {
+      width: 100px;
+      height: 100px;
+      display: block;
+      margin: 0 auto 20px auto;
+    }
+
+    .registro-container h2 {
+      color: #DEA41E;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-control {
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .btn-registro {
+      background-color: #DEA41E;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    .btn-registro:hover {
+      background-color: #c38e18;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+      color: #555;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="registro-container">
+    <img src="Recursos/General/registrarse_icono.png" alt="Icono Registro">
+    <h2>Registro de Atleta</h2>
+    
+    <form action="php/procesar_registro.php" method="POST">
+      <input type="text" name="identificacion" class="form-control" placeholder="Identificación" required>
+      <input type="text" name="usuario" class="form-control" placeholder="Usuario" required>
+      <input type="password" name="contrasena" class="form-control" placeholder="Contraseña" required>
+      <input type="text" name="nombre" class="form-control" placeholder="Nombre" required>
+      <input type="text" name="apellido1" class="form-control" placeholder="Primer Apellido" required>
+      <input type="text" name="apellido2" class="form-control" placeholder="Segundo Apellido">
+      <input type="email" name="correo" class="form-control" placeholder="Correo Electrónico" required>
+      <input type="tel" name="telefono" class="form-control" placeholder="Teléfono" required>
+      <button type="submit" class="btn btn-registro">Registrarse</button>
+    </form>
+
+    <a href="login.html" class="back-link">¿Ya tienes cuenta? Inicia sesión</a>
+    <a href="index.html" class="back-link">Volver al inicio</a>
+  </div>
+
+</body>
+</html>
+

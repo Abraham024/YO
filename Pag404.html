@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página Error 404</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #DEA41E;
+      color: #001C55;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .error-container {
+      text-align: center;
+      padding: 50px;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      max-width: 600px;
+    }
+    .error-code {
+      font-size: 120px;
+      font-weight: bold;
+      color: #001C55;
+    }
+    .error-message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .btn-uia {
+      background-color: #001C55;
+      color: white;
+      border: none;
+    }
+    .btn-uia:hover {
+      background-color: #002d80;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="error-container">
+    <div class="error-code">
+        <h1>Error 404</h1>
+    </div>
+    <div class="error-message">
+        <h4>¡Ups! La página que buscas no existe.</h4>
+    </div>
+    <p><img src="Recursos/General/robot.webp" width="200" height="200" class="img-fluid"/></p>
+    <p>Es posible que se haya eliminado la dirección.</p>
+    <a href="index.html" class="btn btn-uia mt-3">Volver al inicio</a>
+  </div>
+
+</body>
+</html>

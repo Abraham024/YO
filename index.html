@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>UIA Sport GYM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .hero-logo {
+      display: block;
+      margin: 40px auto 20px auto;
+    }
+
+    .hero-title {
+      text-align: center;
+      font-size: 32px;
+      color: #2c3e50;
+    }
+
+    .hero-subtitle {
+      text-align: center;
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    footer {
+      background-color: #f8f9fa;
+      padding: 30px 0;
+      margin-top: 40px;
+    }
+
+    footer h4 {
+      margin-bottom: 15px;
+    }
+
+    footer img {
+      margin: 0 10px;
+    }
+
+    .copyright {
+      background-color: #ffffff;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    .navbar-brand img {
+      height: 60px;
+    }
+
+    .testimonial {
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    .testimonial img {
+      width: 80px;
+      height: 80px;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="Recursos/General/Logotipo.ico" alt="GYM Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="Acerca de.html">Acerca de</a></li>
+          <li class="nav-item"><a class="nav-link" href="Servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="Mapa.html">Mapa</a></li>
+          <li class="nav-item"><a class="nav-link" href="Contactenos.html">Contáctenos</a></li>
+          <li class="nav-item"><a class="nav-link" href="Pag404.html">Horarios</a></li>
+          <li class="nav-item"><a class="nav-link" href="Login.html">Iniciar Sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- LOGO + SLOGAN -->
+  <div class="container text-center">
+    <img src="Recursos/General/Logotipo.png" width="320" alt="Logo Principal" class="hero-logo">
+    <h1 class="hero-title">El Gimnasio de los Universitarios</h1>
+    <h2 class="hero-subtitle">Come to be better</h2>
+  </div>
+
+  <!-- VIDEO -->
+  <div class="container mt-4">
+    <div class="embed-responsive embed-responsive-16by9">
+      <video class="embed-responsive-item" autoplay muted loop>
+        <source src="Recursos/Inicio/inicio_banner.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </div>
+  </div>
+
+  <!-- TESTIMONIOS -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Opinión de nuestros clientes</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="testimonial">
+          <h5>Kevin Villalta</h5>
+          <p class="text-secondary">Qué alegría poder tener la oportunidad de tener un GYM en la U.</p>
+          <img src="Recursos/Inicio/inicio_opinion.png" alt="Cliente">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial">
+          <h5>Monica Vargas</h5>
+          <p class="text-secondary">Salir del trabajo y poder ir al GYM a entrenar y luego estudiar es lo mejor.</p>
+          <img src="Recursos/Inicio/inicio_opinion.png" alt="Cliente">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial">
+          <h5>Josue Zuñiga</h5>
+          <p class="text-secondary">Los mejores equipos y Coaches, siempre limpio y ordenado.</p>
+          <img src="Recursos/Inicio/inicio_opinion.png" alt="Cliente">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Encuéntranos en</h4>
+          <a href="https://www.facebook.com/people/GNFIT-Costa-Rica/61560108880107/?locale=es_LA" target="_blank">
+            <img src="Recursos/General/fb.png" alt="Facebook" width="60">
+          </a>
+          <a href="https://www.instagram.com/gnfitnesscenter/?hl=es" target="_blank">
+            <img src="Recursos/General/ig.png" alt="Instagram" width="55">
+          </a>
+        </div>
+        <div class="col-md-6">
+          <h4>Contacto</h4>
+          <p>Correo: UIASportGYM@uia.ac.cr</p>
+          <p>Teléfono: 2450-2525</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="copyright">
+    <small>Todos los Derechos Reservados. | Alajuela, CR. &copy; 2025</small>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

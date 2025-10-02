@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<title>Contáctenos</title>
+</head>
+<body>
+	<br />
+
+
+	<div class="container">
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+			<span class="navbar-toggler-icon"> </span>
+        </button>
+        <!-- definir el logo como icono peque�o -->
+        <a class="navbar-brand" href="index.html">
+         <img src="Recursos/General/Logotipo.ico" width="80" height="60" alt="Icono del GYM" /> 
+        </a>
+        
+    <!-- definir las opciones del menu para navegar -->
+    <div class="collapse navbar-collapse" id="opciones">
+        <ul class="navbar-nav">
+             <li class="nav-item">
+				<a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Acerca de.html">Acerca de </a>
+            </li>
+			<li class="nav-item">
+                <a class="nav-link" href="Servicios.html">Servicios </a>
+            </li>                              
+            <li class="nav-item">
+                <a class="nav-link" href="Mapa.html"> Mapa </a>
+			</li>
+			<li class="nav-item">
+            <a class="nav-link" href="Contactenos.html"> Contáctenos </a>
+			</li>
+		    <li class="nav-item">
+                <a class="nav-link" href="Pag404.html"> Horarios </a>
+		    </li>
+        </ul>
+    </div>
+ 	</nav>
+
+     <meta charset="utf-8" />
+        <title>Formulario para contactarnos</title>
+      <!--  <link rel="stylesheet" href="mihojadeestilos.css"/>    -->
+    
+    
+    <style type="text/css">
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+        .star-rating label {
+          font-size: 2rem;
+          color: gray;
+          cursor: pointer;
+          transition: color 0.2s;
+        }
+        .star-rating input[type="radio"]:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+          color: gold;
+        }
+        
+           form {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .error {
+            color: red;
+            font-size:16px;
+        }
+    </style>
+    
+  <script>
+    function validarForm()
+    {
+        var valido = true;
+
+        // validar el nombre, que solo contenga texto, no numeros.
+        var nombre=document.getElementById ("nombre") .value;
+        if (!/^[a-zA-ZáéíóúñÁÉÍÓÚÑ\s]+$/.test (nombre) ){
+            document.getElementById("nombreError").innerText = "Nombre Inválido. Solo se permiten letras.";
+            valido = false;
+        } else {
+            document.getElementById("nombreError").innerText = "";
+        }
+        
+        // Validación del teléfono, que sea un número de 8 dígitos.
+        var telefono = document.getElementById("telefono").value;
+        if (!/^\d{8}$/.test(telefono)) {
+            document.getElementById("telefonoError").innerText = "Teléfono Inválido. Debe tener 8 dígitos.";
+            valido = false;
+        } else {
+            document.getElementById("telefonoError").innerText = "";
+        }
+
+        // Validación del correo electrónico.
+        var correo = document.getElementById("correo").value;
+        if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(correo)) {
+            document.getElementById("correoError").innerText = "Correo Electrónico Inválido.";
+            valido = false;
+        } else {
+            document.getElementById("correoError").innerText = "";
+        }
+
+        // Validación del tipo de consulta.
+        var tipoConsulta = document.querySelector('select[name="tipoConsulta"]').value; 
+        if (tipoConsulta === "") {
+            document.getElementById("tipoConsultaError").innerText = "Debe seleccionar un tipo de consulta.";
+            valido = false;
+        } else {
+            document.getElementById("tipoConsultaError").innerText = "";
+        }
+
+        return valido;
+    
+    }
+
+  </script>
+  
+  
+</head>
+<body>
+
+ 
+    <div class="container mt-5" style="background-color:#DEA41E; padding: 20px; border-radius: 10px;">
+        <h2 class="text-center mb-4">Formulario para contactarnos</h2>
+
+        <form action="https://formsubmit.co/zumbadomonica@gmail.com" method="POST">
+
+            <div class="col-md-80">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Escriba su nombre" required>
+            <span class="error" id="nombreError"></span>
+            </div>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Escriba su número de teléfono" required>
+            <span class="error" id="telefonoError"></span>
+
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" class="form-control" placeholder="Escriba su correo" required>
+            <span class="error" id="correoError"></span>
+
+            <label for="tipoConsulta">Tipo de consulta:</label>
+            <select name="tipoConsulta" class="form-control" id="tipoConsulta" required>
+                <option value="">Seleccione una opción</option>
+                <option>Clases Grupales</option>
+                <option>Horarios</option>
+                <option>Nutrición y Planes</option>
+            </select>
+            <span class="error" id="tipoConsultaError"></span>
+
+            <label for="consulta">Escriba su consulta: </label> 
+            <textarea type="text" id="consulta" name="consulta" class="form-control" placeholder="Escriba su consulta..." row="3" required></textarea>
+
+            <div class="mb-3">
+                <label class="form-label">¿Cómo califica el sitio?</label>
+                <div class="d-flex flex-row-reverse justify-content-start gap-1 star-rating">
+                    <input type="radio" id="estrella5" name="calificacion" value="5"><label for="estrella5">★</label>
+                    <input type="radio" id="estrella4" name="calificacion" value="4"><label for="estrella4">★</label>
+                    <input type="radio" id="estrella3" name="calificacion" value="3"><label for="estrella3">★</label>
+                    <input type="radio" id="estrella2" name="calificacion" value="2"><label for="estrella2">★</label>
+                    <input type="radio" id="estrella1" name="calificacion" value="1"><label for="estrella1">★</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-outline-dark" onCLick="return validarForm()">Enviar</button>
+            <button type="reset" class="btn btn-outline-dark">Limpiar </button>  
+
+        </form>
+	
+        </div>
+        </div>
+        </div>
+
+</body>
+    </footer>
+		<div class="row" style="background-color:#FFFFFF" style="text-align:center">
+			<h9 style="text-align:center" style="font:italic"> Todos los Derechos Reservados. </h9>
+			<h9 style="text-align:center" style="font:italic">Alajuela, CR. </h9>
+			<h9 style="text-align:center" style="font:italic">&copy;2025</h9>
+        </div>
+	</footer>
+</html>
+ 

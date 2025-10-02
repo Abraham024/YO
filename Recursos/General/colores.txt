@@ -1,0 +1,13 @@
+Colores: Restaurante
+
+Color1: Acento ( F27A4C )
+Color2: Acento Alt ( F7571A )
+Color3: Texto más fuerte ( 01050E )
+Color4: Texto fuerte ( 3F4349 )
+Color5: Texto medio ( 595B5F )
+Color6: Texto sutil ( 747575 )
+Color7: Fondo sutil ( E6E1DB )
+Color8: Fondo más claro ( FAF7F0 )
+Color9: Blanco ( FFFFFF )
+
+

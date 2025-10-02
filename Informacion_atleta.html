@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Información del Atleta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    button {
+      flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-cargar {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .btn-cargar:hover {
+      background-color: #1e40af;
+    }
+
+    .btn-actualizar {
+      background-color: #10b981;
+      color: white;
+    }
+
+    .btn-actualizar:hover {
+      background-color: #0e7c62;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Información del Atleta</h2>
+
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" />
+    </div>
+
+    <div class="form-group">
+      <label for="apellido1">Primer Apellido:</label>
+      <input type="text" id="apellido1" />
+    </div>
+
+    <div class="form-group">
+      <label for="apellido2">Segundo Apellido:</label>
+      <input type="text" id="apellido2" />
+    </div>
+
+    <div class="form-group">
+      <label for="correo">Correo Electrónico:</label>
+      <input type="email" id="correo" />
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" />
+    </div>
+
+    <div class="buttons">
+      <button class="btn-cargar" onclick="cargarDatos()">Cargar Datos</button>
+      <button class="btn-actualizar" onclick="actualizarDatos()">Actualizar</button>
+    </div>
+  </div>
+
+  <script>
+    function cargarDatos() {
+      fetch('php/cargar_datos_atleta.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.error) {
+            alert('Error: ' + data.error);
+            return;
+          }
+          document.getElementById('nombre').value = data.nombre || '';
+          document.getElementById('apellido1').value = data.apellido1 || '';
+          document.getElementById('apellido2').value = data.apellido2 || '';
+          document.getElementById('correo').value = data.correo || '';
+          document.getElementById('telefono').value = data.telefono || '';
+        })
+        .catch(error => {
+          alert('Error al cargar los datos.');
+          console.error(error);
+        });
+    }
+
+    function actualizarDatos() {
+      const datos = {
+        nombre: document.getElementById('nombre').value,
+        apellido1: document.getElementById('apellido1').value,
+        apellido2: document.getElementById('apellido2').value,
+        correo: document.getElementById('correo').value,
+        telefono: document.getElementById('telefono').value
+      };
+
+      fetch('php/actualizar_datos_atleta.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datos)
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          alert('¡Datos actualizados correctamente!');
+        } else {
+          alert('Error al actualizar: ' + data.error);
+        }
+      })
+      .catch(error => {
+        alert('Error al actualizar los datos.');
+        console.error(error);
+      });
+    }
+  </script>
+
+</body>
+</html>
